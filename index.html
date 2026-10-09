@@ -54,7 +54,16 @@
     .menti-link { margin-top: 20px; }
     .background { display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: start; margin-bottom: 66px; padding: 28px 34px; border: 1px solid var(--line); background: var(--card); }
     .background h2 { font-size: clamp(1.35rem, 2.4vw, 1.8rem); }
-    .background p { margin: 8px 0 0; color: var(--muted); font-size: .95rem; }
+    .background p { margin: 8px 0 0; color: #53615c; font-size: .95rem; max-width: 720px; }
+    .background .byline { color: var(--muted); font-size: .88rem; font-style: italic; }
+    .metrics-table { grid-column: 1 / -1; }
+    .metrics-table table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+    .metrics-table caption { margin-bottom: 12px; color: var(--ink); text-align: left; font-size: .92rem; }
+    .metrics-table th, .metrics-table td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .metrics-table thead th { border-bottom: 2px solid #b6c5b6; color: var(--green); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
+    .metrics-table tbody th { color: var(--ink); font: 500 1.05rem/1.3 var(--serif); width: 20%; }
+    .metrics-table td { color: #4e5e57; }
+    .background .table-note { margin-top: 10px; color: var(--muted); font-size: .84rem; max-width: none; }
     .mentimeter img { display: block; width: min(100%, 560px); height: auto; margin: 24px auto 0; }
     footer { padding: 25px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
     @media (max-width: 700px) {
@@ -65,6 +74,11 @@
       .download { grid-column: 2; justify-self: start; margin-top: 0; }
       .background { grid-template-columns: 1fr; padding: 24px; }
       .background .download { grid-column: 1; }
+      .metrics-table thead { display: none; }
+      .metrics-table tr, .metrics-table th, .metrics-table td { display: block; width: auto; }
+      .metrics-table tr { padding: 14px 0; border-bottom: 1px solid var(--line); }
+      .metrics-table tbody th, .metrics-table td { padding: 4px 0; border: 0; }
+      .metrics-table td::before { content: attr(data-label); display: block; color: var(--green); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
     }
   </style>
 </head>
@@ -98,12 +112,43 @@
       <section class="background" aria-labelledby="background-title">
         <div>
           <h2 id="background-title">Background information on nitrogen metrics</h2>
-          <p>An overview of the nitrogen metrics discussed in the session.</p>
+          <p class="byline">Draft prepared by Azusa Oita based on the email discussion among Part 2 contributors</p>
+          <p>This special session explores the synergies and challenges of three approaches. As basic background information, Table 1 summarizes their main purposes, typical scales, and intended users in their original settings.</p>
         </div>
         <a class="download" href="Papers/0_Background%20info%20for%20N%20metrics.pdf" aria-label="Open background information on nitrogen metrics PDF">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v4h14v-4"/></svg>
           PDF
         </a>
+        <div class="metrics-table">
+          <table>
+            <caption><strong>Table 1</strong> · Summary of the nitrogen footprint, nitrogen use efficiency, and national/regional nitrogen budgets</caption>
+            <thead>
+              <tr><th scope="col">Approach</th><th scope="col">Main purpose</th><th scope="col">Typical scales</th><th scope="col">Intended users</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Nitrogen footprint</th>
+                <td data-label="Main purpose">Link many kinds of entities of supply chains, primarily consumers, to nitrogen emissions and impacts</td>
+                <td data-label="Typical scales">Individual, institutional, watershed, national</td>
+                <td data-label="Intended users">Individual, institutional, watershed, national, global</td>
+              </tr>
+              <tr>
+                <th scope="row">Nitrogen use efficiency (NUE)</th>
+                <td data-label="Main purpose">Assess how efficiently nitrogen inputs are converted into useful outputs within a defined system and what it means at different scales</td>
+                <td data-label="Typical scales">Farm, food system; also regional to global</td>
+                <td data-label="Intended users">Farmers, other producers, advisors, and policy makers</td>
+              </tr>
+              <tr>
+                <th scope="row">National/regional nitrogen budgets</th>
+                <td data-label="Main purpose">Understanding N cycle, identifying storage, losses, and possible intervention points</td>
+                <td data-label="Typical scales">Subnational region, country, and global scale</td>
+                <td data-label="Intended users">Policy makers, researchers</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="table-note">Based on Table 3.1 in the INMS Guidance Document on Nitrogen Impact Assessment Methods.</p>
+          <p class="table-note"><strong>Note:</strong> Here, “nitrogen footprint” mainly refers to the N-Calculator and related derived approaches, while some other footprint approaches, including a budget-based approach, may also be within scope.</p>
+        </div>
       </section>
 
       <section aria-labelledby="papers-title">
