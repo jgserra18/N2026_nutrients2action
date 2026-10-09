@@ -51,6 +51,10 @@
     .mentimeter { margin-top: 74px; padding: 34px; border: 1px solid var(--line); background: var(--card); text-align: center; }
     .mentimeter h2 { margin-bottom: 10px; }
     .mentimeter p { margin: 0; color: var(--muted); }
+    .menti-link { margin-top: 20px; }
+    .background { display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: start; margin-bottom: 66px; padding: 28px 34px; border: 1px solid var(--line); background: var(--card); }
+    .background h2 { font-size: clamp(1.35rem, 2.4vw, 1.8rem); }
+    .background p { margin: 8px 0 0; color: var(--muted); font-size: .95rem; }
     .mentimeter img { display: block; width: min(100%, 560px); height: auto; margin: 24px auto 0; }
     footer { padding: 25px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
     @media (max-width: 700px) {
@@ -59,6 +63,8 @@
       .intro { grid-template-columns: 1fr; gap: 15px; }
       .paper { grid-template-columns: 44px 1fr; gap: 15px; }
       .download { grid-column: 2; justify-self: start; margin-top: 0; }
+      .background { grid-template-columns: 1fr; padding: 24px; }
+      .background .download { grid-column: 1; }
     }
   </style>
 </head>
@@ -79,14 +85,25 @@
         <span>N2026, Kyoto</span>
         <span><a href="https://n2026.org/">N2026 conference website</a></span>
         <!-- Add the session date, time, room, and convenors when confirmed. -->
-        <span>Tuesday 3 November, Room C-2 (1st floor)</span>
+        <span>Tuesday 3 November, Room 104</span>
       </div>
     </section>
 
     <main>
       <section class="intro" aria-labelledby="about-title">
-        <h2 id="about-title">A shared question</h2>
-        <p>This session brings together perspectives on nitrogen budgets, efficiency, footprints, policy, and consumer choices. The position papers set out the contributors’ arguments and questions to help focus the discussion.</p>
+        <h2 id="about-title">A shared challenge</h2>
+        <p>This session brings together perspectives on nitrogen budgets, nitrogen use efficiency, nitrogen footprints, policy, and consumer choices to explore how these approaches can complement one another and support action. The position papers set out the contributors’ arguments and questions to help focus the discussion.</p>
+      </section>
+
+      <section class="background" aria-labelledby="background-title">
+        <div>
+          <h2 id="background-title">Background information on nitrogen metrics</h2>
+          <p>An overview of the nitrogen metrics discussed in the session.</p>
+        </div>
+        <a class="download" href="Papers/00_Background_nitrogen_metrics.pdf" aria-label="Open background information on nitrogen metrics PDF">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v4h14v-4"/></svg>
+          PDF
+        </a>
       </section>
 
       <section aria-labelledby="papers-title">
@@ -99,11 +116,11 @@
             <div class="number" aria-label="Paper 1">01</div>
             <div>
               <h3>The Danish N-Footprint: The Cost of Consumption and the Nᵣ Conundrum Beyond Borders</h3>
-              <p class="author">Jaques L. Vos</p>
+              <p class="author">Jacques L. Vos</p>
               <p class="presentation-time">Oral presentation · 10:52–11:01</p>
               <p class="claim"><strong>Key claim</strong> · Denmark shows that efficient agricultural production does not guarantee a small N footprint or N independence when domestic consumption, export demand and imported Nᵣ sustain large cross-border N flows.</p>
             </div>
-            <a class="download" href="Papers/01_Jaques_L_Vos_N-Footprint-%5E0-Beyond_N2026_Position-Paper.pdf" aria-label="Open position paper 1 PDF">
+            <a class="download" href="Papers/01_Jacques_L_Vos_N-Footprint-%5E0-Beyond_N2026_Position-Paper.pdf" aria-label="Open position paper 1 PDF">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v4h14v-4"/></svg>
               PDF
             </a>
@@ -221,13 +238,21 @@
             </a>
           </article>
 
-          <!-- Duplicate this article for papers 02–N and update title, author, claim, and PDF filename. -->
+          <article class="paper panel">
+            <div class="number" aria-hidden="true">·</div>
+            <div>
+              <h3>Moderated panel discussion</h3>
+              <p class="author">Moderated by W. Troy Baisden</p>
+              <p class="presentation-time">Panel discussion · 11:48–12:20</p>
+            </div>
+          </article>
         </div>
       </section>
 
       <section class="mentimeter" aria-labelledby="mentimeter-title">
         <h2 id="mentimeter-title">Join the Mentimeter</h2>
-        <p>Scan to vote on discussion topics and submit questions for the panel.</p>
+        <p>Scan the QR code or open the link to vote on discussion topics and submit questions for the panel.</p>
+        <a class="download menti-link" href="https://www.menti.com/alv24nwox35d" target="_blank" rel="noopener">Open Mentimeter</a>
         <img src="mentimeter_callout.png" alt="N2026 Kyoto Mentimeter QR code for voting on discussion topics and submitting panel questions">
       </section>
 
